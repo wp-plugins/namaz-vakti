@@ -20,6 +20,7 @@ Bu eklenti namaz vakitlerini bileşen olarak gösterir. Namaz vakitleri ile ilgi
 * 8 farklı renk seçeneği
 
 ** KATKIDA BULUNANLAR **
+
 *Ummah Tech - Fransızca Çeviri
 
 ** ÇEVİRİ DESTEĞİ SUNUN **
@@ -37,6 +38,7 @@ This plugin shows prayer times with a widget. This plugin get prayer times from 
 * 8 different color option
 
 ** CONTRIBUTORS **
+
 *Ummah Tech - French Translation
 
 ** SUPPORT TRANSLATION **
