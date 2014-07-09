@@ -4,7 +4,7 @@ Tags: diyanet, namaz, ezan, vakit, muslim, islam, salah, salat, mosque, masjid, 
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EHYSTPKQQEUYW
 Requires at least: 2.8
 Tested up to: 3.9.1
-Stable tag: 3.4
+Stable tag: 3.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,10 @@ Answer: All coding standart change with after plugin version 2.0. So you must re
 3. Bileşen / Widget
 
 == Changelog ==
+= 3.4.1 =
+* [tr] Kodlarda globalleştirme yapıldı.
+* [en] Globalized Codes.
+
 = 3.4 =
 * [tr] Widgetteki Şehir - İlçe problemi giderildi. Hicri tarihteki dil problemi giderildi.
 * [en] Fixed city - town bug on widget. Fixed localization bug on hijri date.

@@ -3,7 +3,7 @@
 Plugin Name: Namaz-Ezan Vakitleri
 Plugin URI: http://www.erdemarslan.com/wordpress/18-12-2013/535-namaz-vakitleri-wordpress-eklentisi-widget.html
 Description: Bu eklenti namaz vakitlerini bileşen olarak gösterir. Namaz vakitleri ile ilgili bilgiler T.C. Diyanet İşleri Başkanlığı'ndan alınmaktadır. | This plugin shows prayer times with a widget. This plugin get prayer times from Presidency of Religious Affairs of Turkey.
-Version: 3.4
+Version: 3.4.1
 Author: Erdem ARSLAN
 Author URI: http://www.erdemarslan.com
 */
@@ -15,7 +15,7 @@ $plugindir	= dirname(__FILE__) . DIRECTORY_SEPARATOR;
 // Tanımlamaları yap
 # Eklenti tanımlamaları
 define( 'NV_NAME', $plugin );
-define( 'NV_VERSION', '3.3' );
+define( 'NV_VERSION', '3.4.1' );
 define( 'NV_PLUGIN_DIR', $plugindir );
 
 # Veritabanı tanımlamaları
