@@ -3,8 +3,8 @@ Contributors: Erdem ARSLAN @erdemsaid
 Tags: diyanet, namaz, ezan, vakit, muslim, islam, salah, salat, mosque, masjid, prayer, worship
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EHYSTPKQQEUYW
 Requires at least: 2.8
-Tested up to: 4.0
-Stable tag: 3.4.1
+Tested up to: 4.1.1
+Stable tag: 3.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,10 @@ Answer: All coding standart change with after plugin version 2.0. So you must re
 3. Bileşen / Widget
 
 == Changelog ==
+= 3.4.2 =
+* [tr] Sunucudan veri çekme problemi giderildi.
+* [en] Fixed getting data problem from server.
+
 = 3.4.1 =
 * [tr] Kodlarda globalleştirme yapıldı.
 * [en] Globalized Codes.

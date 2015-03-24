@@ -285,17 +285,17 @@ Class Namaz
 		
 		$url =  $this->server . '/PrayerTime/PrayerTimesSet';
 		
+		
 		$data = array(
-			"countryName"	=> "$ulke",
-			"name"			=> "$ilce",
-			"stateName"		=> "$sehir"
+			'countryName'	=> $ulke,
+			'name'			=> $ilce,
+			'stateName'		=> $sehir
 		);
 		
-		$data = json_encode( $data );
+				
+		$sonuc = $this->__curl( $url, $data );
 		
-		$sonuc = $this->__curl( $url, $data, TRUE );
-		
-		$karaliste = array('NextImsak', 'GunesText', 'ImsakText', 'OgleText', 'IkindiText', 'AksamText', 'YatsiText', 'HolyDaysItem');
+		$karaliste = array('NextImsak');
 		
 		if ( $sonuc['durum'] == 'basarili' )
 		{
@@ -351,15 +351,7 @@ Class Namaz
 	 
 	private function server_check()
 	{
-	 	$ch = curl_init();
-		curl_setopt( $ch, CURLOPT_URL, 'http://www.diyanet.gov.tr/tr/namazvakitleri' );
-		curl_setopt( $ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:26.0) Gecko/20100101 Firefox/26.0' );
-		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, FALSE );
-
-		$bilgi = curl_getinfo( $ch );
-		curl_close( $ch );
-		
-		$this->server = $bilgi['http_code'] == 200 ? 'http://www.diyanet.gov.tr' : 'http://web2.diyanet.gov.tr';
+		$this->server = 'http://www.diyanet.gov.tr';
 		
 		return $this;
 	}
@@ -373,63 +365,36 @@ Class Namaz
 	 * @param boolean Bu bağlantının POST metodu ile yapılıp yapılmayacağını belirtir
      * @return array sonucu bir dizi olarak döndürür
      */
-	private function __curl($url, $data, $is_post=FALSE)
+	private function __curl($url, $data)
 	{
-		if( !$is_post )
-		{
-			$url = sprintf( $url, $data );
-		}
 		
-		$ch = curl_init();
-		curl_setopt( $ch, CURLOPT_URL, $url );
+		$response = wp_remote_post( $url, array(
+			'method' => 'POST',
+			'timeout' => 45,
+			'redirection' => 1,
+			'httpversion' => '1.0',
+			'blocking' => true,
+			'headers' => array(),
+			'body' => $data,
+			'cookies' => array()
+			)
+		);
 		
-		// Post varsa 
-		if ( $is_post )
-		{
-			curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'POST' );
-			curl_setopt( $ch, CURLOPT_POSTFIELDS, $data );
-			curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json', 'Content-Length: ' . strlen( $data ) ) );
-		}
-			
-		curl_setopt( $ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:26.0) Gecko/20100101 Firefox/26.0' );
-		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, TRUE );
 		
-		$bilgi = curl_getinfo( $ch );
-		$veri = curl_exec( $ch );
-				
-		if( $bilgi['http_code'] == 200 ) // POST durumunda geçerli veri dönerse HTTP_RESPONSE_CODE = 200 oluyor!
-		{
-			
+		if( array_key_exists('response', $response) && $response['response']['code'] == 200 ) {
 			$sonuc = array(
 				'durum'	=> 'basarili',
-				'veri'	=> json_decode( $veri, TRUE )
+				'veri'	=> json_decode( $response['body'], TRUE )
 			);
-		}
-		elseif ($bilgi['http_code'] == 0 )
-		{
-			// GET Durumunda HTTP_RESPONSE_CODE = 0 olduğundan gelen veriye bakıyoruz. Eğer [] ise hata, değil ise veri!
-			if( $veri != '[]' )
-			{
-				$sonuc = array(
-					'durum'	=> 'basarili',
-					'veri'	=> json_decode( $veri, TRUE )
-				);
-			} else {
-				$sonuc = array(
-					'durum'	=> 'hata',
-					'veri'	=> array()
-				);
-			}
-		}
-		else
-		{
+		} else {
 			$sonuc = array(
 				'durum'	=> 'hata',
 				'veri'	=> array()
 			);
 		}
-		curl_close( $ch );
+		
 		return $sonuc;
+		
 	}
 	
 	
