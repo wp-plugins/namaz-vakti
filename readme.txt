@@ -13,36 +13,32 @@ Bu eklenti Müslümanlar için namaz vakitlerini gösterir. This plugin shows pr
 == Description ==
 Bu eklenti namaz vakitlerini bileşen olarak gösterir. Namaz vakitleri ile ilgili bilgiler T.C. Diyanet İşleri Başkanlığı'ndan alınmaktadır.
 
-** ÖZELLİKLERİ **
-
+= ÖZELLİKLERİ =
 * Çoklu dil desteği
 * 200den fazla ülke, 5000den fazla yer için namaz vakti
 * 8 farklı renk seçeneği
 
-** KATKIDA BULUNANLAR **
+= KATKIDA BULUNANLAR =
+* Ummah Tech - Fransızca Çeviri
+* Mücahit YURT - Danimarkaca
 
-*Ummah Tech - Fransızca Çeviri
-
-** ÇEVİRİ DESTEĞİ SUNUN **
-
+= ÇEVİRİ DESTEĞİ SUNUN =
 Eklenti için çeviri desteğinde bulunabilirsiniz. Dil dosyalarını http://www.erdemarslan.com/yuklemeler/namazvakti_langs.zip adresinden indirebilirsiniz. Çevirilerinizi erdemsaid[@t]gmail[d0t]com adresine gönderiniz.
 
 ###################################################################################################
 
 This plugin shows prayer times with a widget. This plugin get prayer times from Presidency of Religious Affairs of Turkey.
 
-** FEATURES **
-
+= FEATURES =
 * Multiple language support
 * Prayer times for more than 200 countries and more than 5000 locations.
 * 8 different color option
 
-** CONTRIBUTORS **
+= CONTRIBUTORS =
+* Ummah Tech - French Translation
+* Mucahit YURT - Danish Translation
 
-*Ummah Tech - French Translation
-
-** SUPPORT TRANSLATION **
-
+= SUPPORT TRANSLATION =
 You can help me for translations. If you help me, you will download language files from http://www.erdemarslan.com/yuklemeler/namazvakti_langs.zip Please send your translations to erdemsaid[@t]gmail[d0t]com
 
 == Installation ==
